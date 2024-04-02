@@ -16,6 +16,12 @@ export function  CreateTodo(){
         <button style={{
             padding: 10,
             margin: 10
+        }} onClick={() => {
+            fetch("http://localhost:3000/todos")
+                .then(async function(res){
+                    const json = await res.json();
+                    alert("Todo added");
+                })
         }}>Add a todo</button>
     </div>
 }
